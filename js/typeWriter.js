@@ -1,7 +1,7 @@
 
 let i = 0;
 let text1 = "亲爱的豌豆";
-let text2 = "Today is the Big Day."
+let text2 = "Today is our anniversary."
 let speed = 100;
 
 function typeWriter(text, para){
