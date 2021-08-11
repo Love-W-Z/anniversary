@@ -20,7 +20,7 @@
 		</div>
 		<div id="heartTxt">
 			<div id="heart">
-				<button id="button" onclick="play()"></button>
+				<button id="button" onclick="generateRand()"></button>
 			</div>
 		</div>
 		<div id="content">
@@ -33,6 +33,10 @@
 			</div>
 			<h2 id="mmm"></h2>
 			<h2 id="mmm2"></h2>
+			<div id="timer2">
+				<b id="m2">xx</b> Minutes
+				<b id="s2">xx</b> Seconds
+			</div>
 		</div>
 
     	<div id = "typeDiv">
@@ -41,14 +45,18 @@
     	</div>		
 
 		<script >
+			var timesMissing;
+			var randCount = 0;
+			var numStr="0bxxxx";
+			var endTime=null;
+			var prefix = "距离我下次忍不住拍你，还有";
 			var ok = 0;
 			var flag = 1;
 			var myImage = document.getElementById("img");
 			var myTxt = document.getElementById("Txt");
-			var imageArray = ["pic/pic1.JPG", "pic/pic3.JPG", "pic/pic2.JPG", "pic/pic4.JPG"];
+			var imageArray = ["pic/pic4.JPG"];
 			var imageIndex = 0;
-			var txtArray = ["让我魂牵梦绕的你", "神奇的鸭卷", "生日卡",
-			 "我们的周年合影"];
+			var txtArray = [""];
 			 var len = imageArray.length;
 			var t = 0;
 		</script>
@@ -57,5 +65,6 @@
 		<script type="text/javascript" src="./js/typeWriter.js"></script>
 		<script type="text/javascript" src="./js/date.js"></script>
 		<script type="text/javascript" src="./js/playImg.js"></script>
+		<script type="text/javascript" src="./js/randGen.js"></script>
 	</body>
 </html>

@@ -1,6 +1,6 @@
 #typeDiv {
 	position: absolute;
-	top: 45%;
+	top: 30%;
 	left: 0;
 	right: 0;
 	margin: auto;
@@ -37,18 +37,24 @@
 }
 
 #mmm{
-	font-size: 20px;
+	font-size: 19px;
 	text-align: center;
 	color: white;
 }
 
 #mmm2{
-	font-size: 20px;
+	font-size: 19px;
 	text-align: center;
 	color: white;
 }
 
 #timer{
+	text-align: center;
+	color: white;
+}
+
+
+#timer2{
 	text-align: center;
 	color: white;
 }
@@ -131,6 +137,7 @@
 	left: 0;
 	right: 0;
 	margin: auto;
+	margin-top: 120px;
 	width: auto;
 	height: 300px;
 }

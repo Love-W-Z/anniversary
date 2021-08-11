@@ -20,13 +20,17 @@ function timer(){
 	if(s < 10){
 		s = "0" + s;
 	}
-	var times = Math.floor(t/1000/24/ 60 * 15);
+
+	if (timesMissing === undefined) {
+		timesMissing = Math.floor(t/1000/24/ 60 * 15);		
+	}
+
 	document.getElementById("d").innerHTML = d;
 	document.getElementById("h").innerHTML = h;
 	document.getElementById("m").innerHTML = m;
 	document.getElementById("s").innerHTML = s;
-	document.getElementById("mmm").innerHTML = "在这些日夜里，我已经想你" + times + "次了";
-	document.getElementById("mmm2").innerHTML = "距离下次拍你，还有?" +  + "分钟";
+	document.getElementById("mmm").innerHTML = "在这些日夜里，我已经想你" + timesMissing + "次了";
+	document.getElementById("mmm2").innerHTML = prefix + numStr + "分钟"
 }
 
 function fadein(){

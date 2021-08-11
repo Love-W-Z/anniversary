@@ -17,14 +17,14 @@ function showImage(){
 
 function play(){
 	if(t == 0){
-		myImage.setAttribute("src", "");
+		// myImage.setAttribute("src", "");
 		myTxt.innerHTML = "";
 		imageIndex = 0;
 		clearInterval(showImageInterval);
 	}
 	flag = 1 - flag;
-	document.getElementById("typeDiv").style.opacity = flag;
-	document.getElementById("imgTxt").style.opacity = 1 - flag;
+	// document.getElementById("typeDiv").style.opacity = flag;
+	// document.getElementById("imgTxt").style.opacity = 1 - flag;
 	if(t == 0){
 		//setTimeout(showImage, 1000);
 		setInterval(showImage, 5000);
@@ -46,6 +46,8 @@ function buttonFadeIn(){
 	if(btnVal < 1){
 		btnVal += 0.025;
 		btn.style.opacity = btnVal;
+		document.getElementById("imgTxt").style.opacity = btnVal;
+		// document.getElementById("img").style.opacity = btnVal;
 	}
 	else{
 		clearInterval(buttonInterval);
@@ -65,6 +67,7 @@ function event(){
 		if(ok == 3){
 			setTimeout(function(){buttonInterval = setInterval(buttonFadeIn, 50);}, 1500);
 			clearInterval(imgInterval);
+			play();
 		}
 	}, 50);
 }
