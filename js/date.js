@@ -2,6 +2,7 @@
 var dv = document.getElementById("content");
 dv.style.opacity = 0;
 var val = 0;
+var hasGenRandom = false;
 
 function timer(){
 	var start = new Date(2020, 07, 11, 23, 06);
@@ -19,10 +20,13 @@ function timer(){
 	if(s < 10){
 		s = "0" + s;
 	}
+	var times = Math.floor(t/1000/24/ 60 * 15);
 	document.getElementById("d").innerHTML = d;
 	document.getElementById("h").innerHTML = h;
 	document.getElementById("m").innerHTML = m;
 	document.getElementById("s").innerHTML = s;
+	document.getElementById("mmm").innerHTML = "在这些日夜里，我已经想你" + times + "次了";
+	document.getElementById("mmm2").innerHTML = "距离下次拍你，还有?" +  + "分钟";
 }
 
 function fadein(){
@@ -37,6 +41,7 @@ function fadein(){
 		}
 	}
 }
+
 
 var fadeInterval;
 var fadeinInterval;
