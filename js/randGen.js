@@ -1,5 +1,10 @@
 var missingInterval;
 function generateRand() {
+  if (!hasPlayed) {
+  	console.log("play music");
+    document.getElementById("audio").play();
+    hasPlayed = true;
+  }
 	if (randCount == 0) {
 		// document.getElementById("timer2").style.opacity = 0;
 		numStr = "0bxxxx";
