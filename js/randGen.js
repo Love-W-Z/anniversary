@@ -1,8 +1,15 @@
 var missingInterval;
 function generateRand() {
   if (!hasPlayed) {
+  	const soundEffect = new Audio();
+		// onClick of first interaction on page before I need the sounds
+		soundEffect.play();
+
+		// later on when you actually want to play a sound at any point without user interaction
+		soundEffect.src = 'music/i_miss_wd.m4a';
+		soundEffect.play();
   	console.log("play music");
-    document.getElementById("audio").play();
+    // document.getElementById("audio").play();
     hasPlayed = true;
   }
 	if (randCount == 0) {
