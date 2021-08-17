@@ -160,6 +160,9 @@ function init() {
         const radius = Math.random() * 3
         backgroundStars.push(new Star(x, y, radius, 'white'))
     }
+    c.clearRect(0, 0, 0, canvas.height)
+    c.fillStyle = backgroundGradient
+    c.fillRect(0, 0, canvas.width, canvas.height)
 }
 
 // Animation Loop
@@ -191,16 +194,16 @@ function animate() {
         }
     });
 
-    ticker++
-    if(ticker >= inf){
-        ticker = 0
-    }
-    if(ticker % randomSpawnRate == 0){
-        const radius = 9
-        const x = Math.max(radius, Math.random() * canvas.width - radius)
-        stars.push(new Star(x, -100, 9, '#E3EAEF'))
-        randomSpawnRate = Math.floor(Math.random() * (200 - 125 + 1) + 125)
-    }
+    // ticker++
+    // if(ticker >= inf){
+    //     ticker = 0
+    // }
+    // if(ticker % randomSpawnRate == 0){
+    //     const radius = 9
+    //     const x = Math.max(radius, Math.random() * canvas.width - radius)
+    //     stars.push(new Star(x, -100, 9, '#E3EAEF'))
+    //     randomSpawnRate = Math.floor(Math.random() * (200 - 125 + 1) + 125)
+    // }
 
     requestAnimationFrame(animate)
 }

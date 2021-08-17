@@ -2,7 +2,6 @@
 var dv = document.getElementById("content");
 dv.style.opacity = 0;
 var val = 0;
-var hasGenRandom = false;
 
 function timer(){
 	var start = new Date(2020, 07, 11, 23, 06);

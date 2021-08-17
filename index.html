@@ -12,7 +12,7 @@
 			<source src="music/i_miss_wd.m4a" type="audio/mpeg">
 			Your browser does not support the audio.
     	</audio>
-		<canvas></canvas>
+		<canvas id="myCanvas"></canvas>
 		<div id="imgTxt">
 			<span id="Txt"></span> <br />
 			<span id="tmp"></span>
@@ -60,8 +60,11 @@
 			var txtArray = [""];
 			 var len = imageArray.length;
 			var t = 0;
+			var fireworks = [];
+			var minTimeIntervalForFireworks = 8;
+			var fireworksDurationInMs = 16000;
 		</script>
-		
+
 		<script type="text/javascript" src="./js/stars.js"></script>
 		<script type="text/javascript" src="./js/typeWriter.js"></script>
 		<script type="text/javascript" src="./js/date.js"></script>
