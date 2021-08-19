@@ -10,14 +10,17 @@ function initFireworks() {
 	  let firework = {
 	    sparks: []
 	  };
+    let redN = Math.floor(Math.random() * 2);
+    let greenN = Math.floor(Math.random() * 2);
+    let blueN = Math.floor(Math.random() * 2);
 	  for (let n = 0; n < max_sparks; n++) {
     let spark = {
 	      vx: Math.random() * 5 + .5,
 	      vy: Math.random() * 5 + .5,
 	      weight: Math.random() * .3 + .03,
-	      red: Math.floor(Math.random() * 2),
-	      green: Math.floor(Math.random() * 2),
-	      blue: Math.floor(Math.random() * 2)
+	      red: redN,
+	      green: greenN,
+	      blue: blueN
 	    };
 	    if (Math.random() > .5) spark.vx = -spark.vx;
 	    if (Math.random() > .5) spark.vy = -spark.vy;
@@ -56,7 +59,7 @@ function explode(timestamp) {
           let trailAge = firework.age + i;
           let x = firework.x + spark.vx * trailAge;
           let y = firework.y + spark.vy * trailAge + spark.weight * trailAge * spark.weight * trailAge;
-          let fade = i * 20 - firework.age * 1;
+          let fade = i * 30 - firework.age * 1;
           let r = Math.floor(spark.red * fade);
           let g = Math.floor(spark.green * fade);
           let b = Math.floor(spark.blue * fade);
