@@ -4,11 +4,11 @@ const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
 canvas.width = innerWidth
-canvas.height = innerHeight
+canvas.height = innerHeight * 2
 
 window.addEventListener("resize", function() {
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;     
+    canvas.height = window.innerHeight * 2;     
     init()
 });
 
@@ -148,7 +148,9 @@ let backgroundStars
 let ticker = 0
 let randomSpawnRate = 75
 const groundHeight = 0.09 * canvas.height
-let inf = 1e9
+let inf = 1e9  
+const image = new Image();        
+image.src = './pic/disney.jpeg';  
 function init() {
     stars = []
     miniStars = []
@@ -163,6 +165,20 @@ function init() {
     c.clearRect(0, 0, 0, canvas.height)
     c.fillStyle = backgroundGradient
     c.fillRect(0, 0, canvas.width, canvas.height)
+    image.onload = () => {  
+        var canvasContext = canvas.getContext('2d');
+        var wrh = image.width / image.height;
+        var newWidth = canvas.width;
+        var newHeight = newWidth / wrh;
+        if (newHeight > canvas.height) {
+					newHeight = canvas.height;
+        	newWidth = newHeight * wrh;
+      	}
+        var xOffset = newWidth < canvas.width ? ((canvas.width - newWidth) / 2) : 0;
+        var yOffset = newHeight < canvas.height ? ((canvas.height - newHeight) / 2) : 0;
+
+      	canvasContext.drawImage(image, xOffset, yOffset, newWidth, newHeight);
+    };
 }
 
 // Animation Loop
@@ -193,6 +209,20 @@ function animate() {
             miniStars.splice(index, 1)
         }
     });
+    image.onload = () => {
+        var canvasContext = canvas.getContext('2d');
+        var wrh = image.width / image.height;
+        var newWidth = canvas.width;
+        var newHeight = newWidth / wrh;
+        if (newHeight > canvas.height) {
+					newHeight = canvas.height;
+        	newWidth = newHeight * wrh;
+      	}
+        var xOffset = newWidth < canvas.width ? ((canvas.width - newWidth) / 2) : 0;
+        var yOffset = newHeight < canvas.height ? ((canvas.height - newHeight) / 2) : 0;
+
+      	canvasContext.drawImage(image, xOffset, yOffset, newWidth, newHeight);
+    };
 
     // ticker++
     // if(ticker >= inf){

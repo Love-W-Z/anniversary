@@ -3,8 +3,6 @@ var missingInterval;
 const max_fireworks = 5,
 max_sparks = 50;
 let context = canvas.getContext('2d');
-// var fireworks = [];
-
 function initFireworks() {
   for (let i = 0; i < max_fireworks; i++) {
 	  let firework = {
@@ -51,7 +49,6 @@ function explode(timestamp) {
 	if (start == undefined) {
 		start = timestamp;
 	}
-  // context.clearRect(0, 0, canvas.width, canvas.height);
   fireworks.forEach((firework,index) => {
     if (firework.phase == 'explode') {
         firework.sparks.forEach((spark) => {
@@ -102,13 +99,11 @@ function generateRand() {
 		soundEffect.play();
 
 		// later on when you actually want to play a sound at any point without user interaction
-		soundEffect.src = 'music/i_miss_wd.m4a';
+		soundEffect.src = 'music/haoxianghaoxiang_gujuji.mp3';
 		soundEffect.play();
-    // document.getElementById("audio").play();
-    hasPlayed = true;
+		hasPlayed = true;
   }
 	if (randCount == 0) {
-		// document.getElementById("timer2").style.opacity = 0;
 		numStr = "0bxxxx";
 	}
 	if (randCount < 4) {
