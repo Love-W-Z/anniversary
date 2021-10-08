@@ -4,8 +4,15 @@ dv.style.opacity = 0;
 var val = 0;
 
 function timer(){
-	var start = new Date(2020, 07, 11, 23, 06);
-	var t = new Date() - start;
+	var today = new Date(); //get current date
+	var years = today.getFullYear() - 2020;
+	var anniversary = new Date(today.getFullYear(), 07, 11, 23, 06);
+	if (anniversary - today < 0) {
+		years += 1;
+		anniversary = new Date(today.getFullYear() + 1, 07, 11, 23, 06);
+	}
+	console.log("anniversary", anniversary);
+	var t = anniversary - new Date();
 	var d = Math.floor(t / 1000 / 60 / 60 / 24);
 	var h = Math.floor(t / 1000 / 60 / 60 % 24);
 	if(h < 10){
@@ -28,14 +35,22 @@ function timer(){
 	document.getElementById("h").innerHTML = h;
 	document.getElementById("m").innerHTML = m;
 	document.getElementById("s").innerHTML = s;
+	document.getElementById("together").innerHTML = "距离我们第" + years + "个表白纪念日还有";
 	document.getElementById("mmm").innerHTML = "在这些日夜里，我已经想你" + timesMissing + "次了";
 	document.getElementById("mmm2").innerHTML = prefix + numStr + "分钟"
 }
 
 
 function timer_meet(){
-	var start = new Date(2013, 09, 09, 13, 49, 16);
-	var t = new Date() - start;
+	var today = new Date(); //get current date
+	var years = today.getFullYear() - 2013;
+	var anniversary = new Date(today.getFullYear(), 09, 09, 13, 49, 16);
+	if (anniversary - today < 0) {
+		years += 1;
+		anniversary = new Date(today.getFullYear() + 1, 09, 09, 13, 49, 16);
+	}
+
+	var t = anniversary - new Date();
 	var d = Math.floor(t / 1000 / 60 / 60 / 24);
 	var h = Math.floor(t / 1000 / 60 / 60 % 24);
 	if(h < 10){
@@ -54,6 +69,8 @@ function timer_meet(){
 	document.getElementById("hm").innerHTML = h;
 	document.getElementById("mm").innerHTML = m;
 	document.getElementById("sm").innerHTML = s;
+	document.getElementById("meet").innerHTML = "距离我们第" + years + "个相识纪念日还有";
+
 }
 
 function fadein(){
