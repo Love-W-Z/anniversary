@@ -6,6 +6,7 @@ var val = 0;
 function timer(){
 	var today = new Date(); //get current date
 	var years = today.getFullYear() - 2020;
+	var met_date = new Date(2020, 07, 11, 23, 06)
 	var anniversary = new Date(today.getFullYear(), 07, 11, 23, 06);
 	if (anniversary - today < 0) {
 		years += 1;
@@ -28,7 +29,7 @@ function timer(){
 	}
 
 	if (timesMissing === undefined) {
-		timesMissing = Math.floor(t/1000/24/ 60 * 15);		
+		timesMissing = Math.floor( (today - met_date) /1000 / 15/ 60);		
 	}
 
 	document.getElementById("d").innerHTML = d;
